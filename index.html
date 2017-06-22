@@ -23,7 +23,8 @@
 
     <!-- Theme CSS -->
     <link href="css/agency.min.css" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery.warpdrive.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -41,7 +42,106 @@
 .port {  position: relative;  padding-bottom: 56.25%;  overflow: hidden;}
 .port iframe{ position: absolute;  display: block;top: 0; left: 0; width: 100%;  height: 100%;}
 section h3.section-subheading { color: #fff;}
+
+#holder {
+    position: absolute;
+    width: 1920px;
+    height: 702px;
+}
+	
+	progress[value] {
+/* Eliminamos la apariencia por defecto */
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+/* Quitamos el borde que aparece en Firefox */
+border: none;
+
+/* Aplicamos las dimensiones */
+width: 250px;
+height: 20px;
+
+/* Aplicamos color a la barra */
+color: blue;
+}
+
+/* Compatibilidad de color en Firefox y Chrome */
+progress::-moz-progress-bar { background: #0063a6; }
+progress::-webkit-progress-value { background: #0063a6; }
 </style>
+
+<script>
+
+        $( document ).ready( function() {
+
+            //------------------------------------------------------------------------
+
+            //Settings - params for WarpDrive
+            var settings = {
+
+                width: 700,
+                height: 480,
+                autoResize: false,
+                autoResizeMinWidth: null,
+                autoResizeMaxWidth: null,
+                autoResizeMinHeight: null,
+                autoResizeMaxHeight: null,
+                addMouseControls: true,
+                addTouchControls: true,
+                hideContextMenu: true,
+                starCount: 6666,
+                starBgCount: 2222,
+                starBgColor: { r:255, g:255, b:255 },
+                starBgColorRangeMin: 10,
+                starBgColorRangeMax: 40,
+                starColor: { r:255, g:255, b:255 },
+                starColorRangeMin: 10,
+                starColorRangeMax: 100,
+                starfieldBackgroundColor: { r:0, g:0, b:0 },
+                starDirection: 1,
+                starSpeed: 20,
+                starSpeedMax: 200,
+                starSpeedAnimationDuration: 2,
+                starFov: 300,
+                starFovMin: 200,
+                starFovAnimationDuration: 2,
+                starRotationPermission: true,
+                starRotationDirection: 1,
+                starRotationSpeed: 0.0,
+                starRotationSpeedMax: 1.0,
+                starRotationAnimationDuration: 2,
+                starWarpLineLength: 2.0,
+                starWarpTunnelDiameter: 100,
+                starFollowMouseSensitivity: 0.025,
+                starFollowMouseXAxis: true,
+                starFollowMouseYAxis: true
+
+            };
+
+            //------------------------------------------------------------------------
+
+            //standalone
+
+            //init
+            
+            var warpdrive = new WarpDrive( document.getElementById( 'holder' ) );
+            //var warpdrive = new WarpDrive( document.getElementById( 'holder' ), settings );
+
+            //------------------------------------------------------------------------
+
+            //jQuery
+
+            //init
+            
+            //$( '#holder' ).warpDrive();
+            //$( '#holder' ).warpDrive( settings );
+            
+            //------------------------------------------------------------------------
+
+		} );
+        
+    </script>
+
 
 </head>
 
@@ -88,54 +188,184 @@ section h3.section-subheading { color: #fff;}
 
     <!-- Header -->
     <header>
+        <div id="holder"></div>
         <div class="container">
-            <div class="intro-text">
+          
+            <div class="intro-text" style="z-index: 99999999; display: block; position: relative;">
                 
                 <div class="intro-heading">Trabajos Realizados</div>
-                <div class="intro-lead-in">  </div>
-                <a href="#services" class="page-scroll btn btn-xl">Ir a Portafolio</a>
+              
+                
             </div>
         </div>
     </header>
 
-    <!-- Services Section
+   Services Section
     <section id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Habilidades</h2>
+                    
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
+                    <!--<span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    </span>-->
+                    <h4 class="service-heading">Html 5</h4>
+                    <p class="text-muted"><progress max="100" value="90" ></progress></p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                   
+                    <h4 class="service-heading">Css3</h4>
+                     <p class="text-muted"><progress max="100" value="94" ></progress></p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                  
+                    <h4 class="service-heading">Php</h4>
+                     <p class="text-muted"><progress max="100" value="50" ></progress></p>
                 </div>
+                
+                
+                
+                
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Mysql</h4>
+                     <p class="text-muted"><progress max="100" value="45" ></progress></p>
+                </div>
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">JavaScript</h4>
+                     <p class="text-muted"><progress max="100" value="56" ></progress></p>
+                </div>
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Jquery</h4>
+                     <p class="text-muted"><progress max="100" value="60" ></progress></p>
+                </div>
+                
+                
+                
+                
+                
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Bootstrap</h4>
+                     <p class="text-muted"><progress max="100" value="70" ></progress></p>
+                </div>
+               
+                
+                
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Joomla</h4>
+                     <p class="text-muted"><progress max="100" value="90" ></progress></p>
+                </div>
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">wordpress</h4>
+                     <p class="text-muted"><progress max="100" value="85" ></progress></p>
+                </div>
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Drupal</h4>
+                     <p class="text-muted"><progress max="100" value="55" ></progress></p>
+                </div>
+                
+                
+                
+                 <div class="row"> 
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading"><br/> Herramientas</h2>
+                    
+                </div>
+            </div>
+               
+               
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Photoshop</h4>
+                     <p class="text-muted"><progress max="100" value="88" ></progress></p>
+                </div>
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Illustrator </h4>
+                     <p class="text-muted"><progress max="100" value="62" ></progress></p>
+                </div>
+                
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">After Effect </h4>
+                     <p class="text-muted"><progress max="100" value="70" ></progress></p>
+                </div>
+                
+                
+                 <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Premiere </h4>
+                     <p class="text-muted"><progress max="100" value="65" ></progress></p>
+                </div>
+                 <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Final Cut  </h4>
+                     <p class="text-muted"><progress max="100" value="60" ></progress></p>
+                </div>
+                
+                
+                 <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Pro Tools</h4>
+                     <p class="text-muted"><progress max="100" value="60" ></progress></p>
+                </div>
+                
+                
+                
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">3DS Max</h4>
+                     <p class="text-muted"><progress max="100" value="90" ></progress></p>
+                </div>
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Maya</h4>
+                     <p class="text-muted"><progress max="100" value="70" ></progress></p>
+                </div>
+                
+                
+                
+                
+                
+                
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">Android Studio</h4>
+                     <p class="text-muted"><progress max="100" value="40" ></progress></p>
+                </div>
+                <div class="col-md-4">
+                  
+                    <h4 class="service-heading">xcode</h4>
+                     <p class="text-muted"><progress max="100" value="40" ></progress></p>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
             </div>
         </div>
     </section>
- -->
+  <!--   -->
     <!-- Portfolio Grid Section -->
     <section id="portfolio" class="bg-light-gray">
         <div class="container">
@@ -146,6 +376,21 @@ section h3.section-subheading { color: #fff;}
                 </div>
             </div>
             <div class="row">
+               <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal21" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/cocina.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Cocina con Sentido</h4>
+                        <p class="text-muted">Desarrollo Web</p>
+                    </div>
+                </div>
+                
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
@@ -639,7 +884,9 @@ section h3.section-subheading { color: #fff;}
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contacto</h2>
+                    <h3 class="section-subheading text-muted"> </h3>
                     <h3 class="section-subheading text-muted">christyantrujillo@gmail.com - (57) 321 935 9535 </h3>
+                    <h3 class="section-subheading text-muted">Skype: negro7_77</h3>
                 </div>
             </div>
            <!-- <div class="row">
@@ -1365,6 +1612,42 @@ section h3.section-subheading { color: #fff;}
                                 <ul class="list-inline">
                                     <li>valorar.com.co </li> - <li>2015</li>
                                     <li>Cliente: Crear Imagen - Valorar</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar Projecto</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+        <!-- Portfolio Modal 20 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal21" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Cocina con Sentido</h2>
+                                <p class="item-intro text-muted">Pagina web Cocina con Sentido</p>
+                                <div class="prot"><img class="img-responsive img-centered" src="img/portfolio/cocina-g.jpg" alt=""></div>
+                                <p><strong>Desarrollo Web</strong></p>
+                                <ul class="list-inline">
+                                    <li>cocinaconsentido.com.co </li> - <li>2017</li>
+                                    <li>Cliente: Business and Markets - Cocina con Sentido</li>
                                 </ul>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar Projecto</button>
                             </div>
