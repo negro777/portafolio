@@ -44,7 +44,7 @@
 section h3.section-subheading { color: #fff;}
 
 #holder {
-    position: absolute;
+    position: absolute;overflow: hidden;
     width: 1920px;
     height: 702px;
 }
@@ -68,6 +68,9 @@ color: blue;
 /* Compatibilidad de color en Firefox y Chrome */
 progress::-moz-progress-bar { background: #0063a6; }
 progress::-webkit-progress-value { background: #0063a6; }
+header .container {
+    width: 20%;
+}
 </style>
 
 <script>
@@ -140,7 +143,32 @@ progress::-webkit-progress-value { background: #0063a6; }
 
 		} );
         
+		
+var viewportWidth = $(window).width();
+var viewportHeight = $(window).height();		
+
+$(window).resize(function() {
+
+});
     </script>
+
+<script>
+function thirty_pc() {
+    var height = $(window).height();
+    var thirtypc = (1 * height) - 10;
+    thirtypc = parseInt(thirtypc) + 'px';
+    $("#holder").css('height',thirtypc);
+	$("header").css('height',thirtypc);
+}
+
+$(document).ready(function() {
+    thirty_pc();
+    $(window).bind('resize', thirty_pc);
+});
+
+</script>
+
+
 
 
 </head>
@@ -164,9 +192,12 @@ progress::-webkit-progress-value { background: #0063a6; }
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <!--<li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>-->
+                   <li>
+                        <a class="page-scroll" href="#hab"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#her"><i class="fa fa-wrench" aria-hidden="true"></i></a>
+                    </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Portafolio</a>
                     </li>
@@ -193,15 +224,15 @@ progress::-webkit-progress-value { background: #0063a6; }
           
             <div class="intro-text" style="z-index:9; display: block; position: relative;">
                 
-                <div class="intro-heading">Trabajos Realizados</div>
+                <div class="intro-heading">portafolio</div>
               
                 
             </div>
         </div>
     </header>
 
-   Services Section
-    <section id="services">
+   
+    <section id="hab">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -275,8 +306,9 @@ progress::-webkit-progress-value { background: #0063a6; }
                     <h4 class="service-heading">Drupal</h4>
                      <p class="text-muted"><progress max="100" value="55" ></progress></p>
                 </div>
-                
-                
+              </div></div>  
+                 <section id="her">
+        <div class="container">
                 
                  <div class="row"> 
                 <div class="col-lg-12 text-center">
