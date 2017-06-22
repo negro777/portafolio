@@ -29,7 +29,7 @@ THE SOFTWARE.
 
         var settings = {};
             settings.width = 1920;
-            settings.height = 690;
+            settings.height = 950;
             settings.autoResize = false;
             settings.autoResizeMinWidth = null;
             settings.autoResizeMaxWidth = null;
@@ -38,7 +38,7 @@ THE SOFTWARE.
             settings.addMouseControls = true;
             settings.addTouchControls = true;
             settings.hideContextMenu = true;
-            settings.starCount = 45666;
+            settings.starCount = 166;
             settings.starBgCount = 2222;
             settings.starBgColor = { r:255, g:255, b:255 };
             settings.starBgColorRangeMin = 10;
